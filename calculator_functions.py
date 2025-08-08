@@ -1,4 +1,6 @@
 # این فایل فقط حاوی توابع محاسباتی هست ،بدون ورودی و خروجی کاربر
+# این فایل مثل یک جعبه‌ابزار (ماژول) هست که فقط ابزار (توابع) توشه. کار اجرا باهاش نیست!
+import math
 from datetime import date
 
 def add (a,b):
@@ -37,13 +39,7 @@ def calculate_bmi(weight, height):
     bmi =weight/(height**2)
     return round(bmi , 2)
 
-def calculate_age(birth_year, birth_month, birth_day):
-    today = date.today()  # تاریخ امروز
-    birth_date = date(birth_year, birth_month, birth_day)  # تاریخ تولد
-    age = today.year - birth_date.year  # سن ابتدایی بر اساس سال
-
-    # اگر تولد هنوز نرسیده، یک سال کم کن
-    if (today.month, today.day) < (birth_date.month, birth_date.day):
-        age -= 1
-    
-    return age  # سن نهایی رو برمی‌گردونه
+#محاسبه سن
+def calculate_age(birth_year):
+    current_year = datetime.datetime.now().year
+    return current_year - birth_year
